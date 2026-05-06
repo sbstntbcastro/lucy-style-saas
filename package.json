@@ -7,11 +7,7 @@
     "build": "npx @cloudflare/next-on-pages --outdir .cloudflare",
     "start": "next start",
     "lint": "next lint",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name init",
-    "pages:deploy": "npm run build && wrangler pages deploy .cloudflare --project-name lucy-style",
-    "pages:watch": "npx @cloudflare/next-on-pages --watch --outdir .cloudflare",
-    "pages:dev": "wrangler pages dev .cloudflare --compatibility-flag=nodejs_compat"
+    "prisma:generate": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "5.12.0",
@@ -41,5 +37,9 @@
     "prettier": "3.2.5",
     "vercel": "latest",
     "wrangler": "latest"
+  },
+  "supportedArchitectures": {
+    "os": ["linux", "win32"],
+    "cpu": ["x64", "arm64"]
   }
 }
