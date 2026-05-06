@@ -14,7 +14,7 @@ Este proyecto está optimizado para ser desplegado en Vercel con una base de dat
 - En la sección **Environment Variables**, añade las siguientes variables:
   - `DATABASE_URL`: Tu cadena de conexión de Supabase.
   - `JWT_SECRET`: Una cadena aleatoria larga para firmar los tokens.
-  - `GEMINI_API_KEY`: Tu API Key de Google AI Studio.
+  - `OPENROUTER_API_KEY`: Tu API Key de OpenRouter.
   - `CLOUDINARY_URL`: Tu URL de Cloudinary (ej: `cloudinary://123:abc@mycloud`).
 
 ### 3. Scripts de Construcción

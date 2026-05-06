@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
 import { getTokenFromRequest, verifyJwt } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import axios from "axios";
 
 export const runtime = "edge";
-
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 export async function POST(request: Request) {
   try {
@@ -26,14 +22,29 @@ export async function POST(request: Request) {
       },
     });
 
-    // Llamada a Gemini
-    const response = await axios.post(GEMINI_URL, {
-      contents: [{
-        parts: [{ text: `Eres Lucy, una asesora de imagen experta. Responde de forma elegante y profesional: ${message}` }]
-      }]
+    // Llamada a OpenRouter
+    const openRouterResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "openrouter/auto",
+        messages: [
+          { role: "system", content: "Eres un asesor de imagen profesional." },
+          { role: "user", content: message }
+        ],
+      }),
     });
 
-    const aiResponse = response.data.candidates[0].content.parts[0].text;
+    if (!openRouterResponse.ok) {
+      const errorData = await openRouterResponse.json();
+      throw new Error(errorData.error?.message || "Error al llamar a OpenRouter");
+    }
+
+    const data = await openRouterResponse.json();
+    const aiResponse = data.choices[0].message.content;
 
     // Guardar respuesta de la IA
     await prisma.chatMessage.create({
@@ -46,7 +57,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ response: aiResponse });
   } catch (error: any) {
-    console.error("Chat Error:", error.response?.data || error.message);
+    console.error("Chat Error:", error.message);
     return NextResponse.json({ error: "Error en el chat de IA" }, { status: 500 });
   }
 }

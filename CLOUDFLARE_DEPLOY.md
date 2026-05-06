@@ -9,7 +9,7 @@ Debes configurar las siguientes variables en el panel de **Cloudflare Pages > Tu
 - `DATABASE_URL`: Tu cadena de conexión de Supabase. 
   - *Nota: Para funcionar en el Edge de Cloudflare, se recomienda usar **Prisma Accelerate** o un pooler de conexiones.*
 - `JWT_SECRET`: Tu secreto para JWT.
-- `GEMINI_API_KEY`: API Key de Google Gemini.
+- `OPENROUTER_API_KEY`: API Key de OpenRouter.
 - `CLOUDINARY_URL`: URL de Cloudinary.
 
 ### 2. Configuración de Build en Cloudflare
