@@ -1,0 +1,11 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "lucy-style"
+compatibility_date = "2024-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Add environment variables here if you want them in wrangler dev
+# GEMINI_API_KEY = "..."
+
+[site]
+bucket = ".vercel/output/static"

@@ -1,0 +1,11 @@
+name: Activar auditor cuando el usuario pida revisar proyectos
+
+when:
+  - user_requests_review
+  - user_requests_audit
+  - user_requests_feedback
+  - user_shares_project
+
+rule: |
+  Si el usuario pide revisar, evaluar, mejorar o auditar un proyecto,
+  debes ejecutar el workflow "Auditar Proyecto".

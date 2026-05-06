@@ -1,0 +1,44 @@
+{
+  "name": "image-advisor-saas",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output --project-name lucy-style",
+    "pages:watch": "npx @cloudflare/next-on-pages --watch",
+    "pages:dev": "wrangler pages dev .vercel/output --compatibility-flag=nodejs_compat"
+  },
+  "dependencies": {
+    "@prisma/client": "5.12.0",
+    "@supabase/supabase-js": "2.42.2",
+    "autoprefixer": "10.4.17",
+    "axios": "1.6.8",
+    "bcryptjs": "2.4.3",
+    "cloudinary": "2.1.0",
+    "jsonwebtoken": "9.0.2",
+    "next": "^16.2.4",
+    "postcss": "8.4.31",
+    "prisma": "5.12.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.4.2"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@cloudflare/workers-types": "^4.20260506.1",
+    "@types/bcryptjs": "2.4.2",
+    "@types/jsonwebtoken": "9.0.5",
+    "@types/node": "20.11.24",
+    "@types/react": "18.2.55",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.0",
+    "prettier": "3.2.5"
+  }
+}
