@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx @cloudflare/next-on-pages --outdir .cloudflare",
     "start": "next start",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name init",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output --project-name lucy-style",
-    "pages:watch": "npx @cloudflare/next-on-pages --watch",
-    "pages:dev": "wrangler pages dev .vercel/output --compatibility-flag=nodejs_compat"
+    "pages:deploy": "npm run build && wrangler pages deploy .cloudflare --project-name lucy-style",
+    "pages:watch": "npx @cloudflare/next-on-pages --watch --outdir .cloudflare",
+    "pages:dev": "wrangler pages dev .cloudflare --compatibility-flag=nodejs_compat"
   },
   "dependencies": {
     "@prisma/client": "5.12.0",

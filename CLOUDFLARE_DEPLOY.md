@@ -15,8 +15,8 @@ Debes configurar las siguientes variables en el panel de **Cloudflare Pages > Tu
 ### 2. Configuración de Build en Cloudflare
 En el panel de configuración de Cloudflare Pages, establece los siguientes valores:
 - **Framework Preset**: `Next.js (App Router)` (o None y configurar manualmente).
-- **Build command**: `npm run pages:build`
-- **Build output directory**: `.vercel/output`
+- **Build command**: `npm run build`
+- **Build output directory**: `.cloudflare`
 - **Compatibility flag**: `nodejs_compat` (en Settings > Functions > Compatibility Flags).
 
 ## Despliegue desde Git
@@ -24,7 +24,7 @@ En el panel de configuración de Cloudflare Pages, establece los siguientes valo
 1. Sube tu código a GitHub o GitLab.
 2. En Cloudflare Dashboard, ve a **Workers & Pages > Create application > Pages > Connect to Git**.
 3. Selecciona tu repositorio.
-4. Configura el comando de build y el directorio de salida como se indicó arriba.
+4. Configura el comando de build (`npm run build`) y el directorio de salida (`.cloudflare`) como se indicó arriba.
 5. Haz clic en **Save and Deploy**.
 
 ## Desarrollo Local (Simulando Cloudflare)
