@@ -1,9 +1,10 @@
 // src/app/api/auth/me/route.ts
 import { NextResponse } from "next/server";
 import { getTokenFromRequest, verifyJwt } from "@/lib/auth";
-import { prisma } from "@/lib/prisma";
+export const runtime = "experimental-edge";
+import prisma from "@/lib/prisma";
 
-export const runtime = "edge";
+
 
 export async function GET(request: Request) {
   try {

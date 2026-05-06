@@ -1,6 +1,7 @@
-// src/components/Layout/Sidebar.tsx
+"use client";
+
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
   { href: "/dashboard", label: "Inicio" },

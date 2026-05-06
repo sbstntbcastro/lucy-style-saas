@@ -1,9 +1,10 @@
 // src/middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { verifyJwt } from "./src/lib/auth";
+import { verifyJwt } from "@/lib/auth";
 
-export const runtime = "edge";
+export const runtime = "experimental-edge";
+
 
 /**
  * Protect private API routes and dashboard pages.

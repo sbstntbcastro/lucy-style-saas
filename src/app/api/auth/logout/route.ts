@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { clearAuthCookie } from "../../../../../../src/lib/auth";
+import { clearAuthCookie } from "@/lib/auth";
 
-export const runtime = "edge";
+export const runtime = "experimental-edge";
+
 
 export async function POST() {
   const response = NextResponse.json({ success: true });
