@@ -3,9 +3,11 @@ name = "lucy-style"
 compatibility_date = "2024-04-01"
 compatibility_flags = ["nodejs_compat"]
 
+pages_build_output_dir = ".cloudflare"
+
 [vars]
-# Add environment variables here if you want them in wrangler dev
-# GEMINI_API_KEY = "..."
+# Add environment variables here
+# OPENROUTER_API_KEY = "..."
 
 [site]
-bucket = ".vercel/output/static"
+bucket = ".cloudflare"
