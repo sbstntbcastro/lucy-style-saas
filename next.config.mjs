@@ -1,4 +1,4 @@
-// next.config.mjs
+// next.config.mjs - cloudflare build fix
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,

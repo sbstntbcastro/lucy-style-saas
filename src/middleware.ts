@@ -1,4 +1,4 @@
-// src/middleware.ts
+// src/middleware.ts - updated for cloudflare
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { verifyJwt } from "@/lib/auth";
