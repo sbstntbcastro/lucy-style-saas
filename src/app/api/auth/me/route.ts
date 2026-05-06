@@ -1,7 +1,7 @@
 // src/app/api/auth/me/route.ts
 import { NextResponse } from "next/server";
 import { getTokenFromRequest, verifyJwt } from "@/lib/auth";
-export const runtime = "experimental-edge";
+export const runtime = "edge";
 import prisma from "@/lib/prisma";
 
 

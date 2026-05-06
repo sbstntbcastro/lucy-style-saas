@@ -35,6 +35,6 @@ npm run pages:dev
 ```
 
 ## Notas Técnicas
-- Todas las rutas de API y el middleware utilizan `export const runtime = "experimental-edge"`.
+- El middleware utiliza `export const runtime = "experimental-edge"`, mientras que las rutas de API utilizan `export const runtime = "edge"`.
 - Se utiliza `@cloudflare/next-on-pages` para transformar el build de Next.js a un formato compatible con Cloudflare Workers.
 - El archivo `wrangler.toml` contiene la configuración básica de compatibilidad.

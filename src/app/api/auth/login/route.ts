@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { comparePassword, signJwt, createAuthCookie } from "@/lib/auth";
-export const runtime = "experimental-edge";
+export const runtime = "edge";
 
 
 
