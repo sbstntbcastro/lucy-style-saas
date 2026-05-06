@@ -1,7 +1,8 @@
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 import { getTokenFromRequest, verifyJwt } from "@/lib/auth";
 import prisma from "@/lib/prisma";
-export const runtime = "edge";
 import { uploadToCloudinary } from "@/lib/cloudinary";
 
 

@@ -14,7 +14,8 @@ const nextConfig = {
       pathname: '/**'
     }]
   },
-  output: "standalone"
+  output: "standalone",
+  serverExternalPackages: ["cloudinary"]
 };
 
 export default nextConfig;
