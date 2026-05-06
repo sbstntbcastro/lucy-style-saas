@@ -14,7 +14,8 @@ const nextConfig = {
       hostname: 'res.cloudinary.com',
       pathname: '/**'
     }]
-  }
+  },
+  output: "standalone"
 };
 
 export default nextConfig;
