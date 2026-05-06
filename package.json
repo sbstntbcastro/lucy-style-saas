@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx opennextjs-cloudflare build",
+    "build": "next build && npx opennextjs-cloudflare build --skipNextBuild && rm -rf .cloudflare && mv .open-next .cloudflare",
     "start": "next start",
     "lint": "next lint",
     "prisma:generate": "prisma generate"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.6",
     "@prisma/client": "5.12.0",
     "@supabase/supabase-js": "2.42.2",
     "autoprefixer": "10.4.17",
